@@ -1,0 +1,170 @@
+<style>
+     selected { 
+          background-color: rgba(44, 15, 234, 0.67) !important;
+          color: white;
+          cursor: cell;
+          border-width: 5px;
+          border-color: blue;
+           }
+</style>
+<div id="communityController" ng-controller="communityController">
+<div class="content_middle_bottom" >
+   		<div class="header-left" id="home">
+		      <section>
+				<ul class="lb-album" id="gallery" >
+					<li>
+						<a id="container1" class="container">
+							<img src="images/g1.jpg"  class="img-responsive" alt="image01"/>
+							<span class="selectcom">{{communities[0].name}}</span>
+                            <input class="cbox" type="checkbox" name="checkboxlist" value="{{communities[0].communityId}}" ng-model="subscriptions[0]" ng-true-value="'YES'" ng-false-value="'NO'"/>                                                                                    
+						</a>
+						<div class="lb-overlay" id="image-1">
+							<a href="#page" class="lb-close">x Close</a>
+							<img src="images/g1.jpg"  class="img-responsive" alt="image01"/>
+							<div>
+								<p style="margin-left: 30%">{{communities[0].description}}</p>
+							</div>
+						</div>
+					</li>
+					<li>
+						<a id="container2" class="container">
+							<img src="images/g2.jpg"  class="img-responsive" alt="image02"/>
+							<span class="selectcom">{{communities[1].name}}</span>
+                            <input class="cbox" type="checkbox" name="checkboxlist" value="{{communities[1].communityId}}" ng-model="subscriptions[1]" ng-true-value="'YES'" ng-false-value="'NO'"/>  
+						</a>
+						<div class="lb-overlay" id="image-2">
+							<img src="images/g2.jpg"  class="img-responsive" alt="image02"/>
+							<div>							
+								<p style="margin-left: 30%">{{communities[1].description}}</p>
+							</div>
+							<a href="#page" class="lb-close">x Close</a>
+						</div>
+					</li>
+					<li>
+						<a id="container3" class="container">
+							<img src="images/g3.jpg"  class="img-responsive" alt="image03"/>
+							<span class="selectcom">{{communities[2].name}}</span>
+                            <input class="cbox" type="checkbox" name="checkboxlist" value="{{communities[2].communityId}}" ng-model="subscriptions[2]" ng-true-value="'YES'" ng-false-value="'NO'"/>  
+						</a>
+						<div class="lb-overlay" id="image-3">
+							<img src="images/g3.jpg"  class="img-responsive" alt="image03"/>
+							<div>							
+								<p style="margin-left: 40%">{{communities[2].description}}</p>
+							</div>
+							<a href="#page" class="lb-close">x Close</a>
+						</div>
+					</li>
+					<li>
+						<a id="container4" class="container">
+							<img src="images/g4.jpg"  class="img-responsive" alt="image04"/>
+							<span class="selectcom">{{communities[3].name}}</span>
+                            <input class="cbox" type="checkbox" name="checkboxlist" value="{{communities[3].communityId}}" ng-model="subscriptions[3]" ng-true-value="'YES'" ng-false-value="'NO'"/>  
+						</a>
+						<div class="lb-overlay" id="image-4">
+							<img src="images/g4.jpg"  class="img-responsive" alt="image04"/>
+							<div>							
+								<p style="margin-left: 35%">{{communities[3].description}}</p>
+							</div>
+							<a href="#page" class="lb-close">x Close</a>
+						</div>
+					</li>
+					<li>
+						<a id="container4" class="container">
+							<img src="images/g5.jpg"  class="img-responsive" alt="image05"/>
+							<span class="selectcom">{{communities[7].name}}</span>
+                            <input class="cbox" type="checkbox" name="checkboxlist" value="{{communities[7].communityId}}" ng-model="subscriptions[7]" ng-true-value="'YES'" ng-false-value="'NO'"/>  
+						</a>
+						<div class="lb-overlay" id="image-5">
+							<img src="images/g5.jpg"  class="img-responsive" alt="image05"/>
+							<div>							
+								<p style="margin-left: 40%">{{communities[7].description}}</p>
+							</div>
+							<a href="#page" class="lb-close">x Close</a>
+						</div>
+					</li>
+					<li>
+						<a id="container6" class="container">
+							<img src="images/g6.jpg"  class="img-responsive" alt="image06"/>
+							<span class="selectcom">{{communities[4].name}}</span>
+                            <input class="cbox" type="checkbox" name="checkboxlist" value="{{communities[4].communityId}}" ng-model="subscriptions[4]" ng-true-value="'YES'" ng-false-value="'NO'"/>
+						</a>
+						<div class="lb-overlay" id="image-6">
+							<img src="images/g6.jpg"  class="img-responsive" alt="image06"/>
+							<div>							
+								<p style="margin-left: 40%">{{communities[4].description}}</p>
+							</div>
+							<a href="#page" class="lb-close">x Close</a>
+						</div>
+					</li>
+					<li>
+						<a id="container7" class="container">
+							<img src="images/g7.jpg"  class="img-responsive" alt="image07"/>
+							<span>{{communities[5].name}}</span>
+                            <input class="cbox" type="checkbox" name="checkboxlist" value="{{communities[5].communityId}}" ng-model="subscriptions[5]" ng-true-value="'YES'" ng-false-value="'NO'"/>
+						</a>
+						<div class="lb-overlay" id="image-7">
+							<img src="images/g7.jpg"  class="img-responsive" alt="image07"/>
+							<div>							
+								<p style="margin-left: 35%">{{communities[5].description}}</p>
+							</div>
+							<a href="#page" class="lb-close">x Close</a>
+						</div>
+					</li>
+					<li>
+						<a id="container8" class="container">
+							<img src="images/g8.jpg"  class="img-responsive" alt="image08"/>
+							<span class="selectcom">{{communities[6].name}}</span>
+                            <input class="cbox" type="checkbox" name="checkboxlist" value="{{communities[6].communityId}}" ng-model="subscriptions[6]" ng-true-value="'YES'" ng-false-value="'NO'"/>
+						</a>
+						<div class="lb-overlay" id="image-8">
+							<img src="images/g8.jpg"  class="img-responsive" alt="image08"/>
+							<div>							
+								<p style="margin-left: 35%">{{communities[6].description}}</p>
+							</div>
+							<a href="#page" class="lb-close">x Close</a>
+						</div>
+					</li>
+					<div class="clearfix"></div>
+				</ul>
+                <button id="target">Submit</button>
+			</section>
+		</div>
+</div>
+</div>
+<script>
+$(function() {
+  $("#selectable").selectable({
+    selected: function(event, ui) {
+      $(ui.selected).css('background', 'rgba(44, 15, 234, 0.67) !important');
+    }
+  });
+
+});
+</script>
+<script>
+    $(document).ready(function(){
+    // $(".container .cbox").hide();
+    $(".container span").click(function(){
+       var $checkbox = $(this).parent().find(".cbox");
+       if ($checkbox.prop('checked')){
+           $checkbox.prop('checked', false);
+       } else {
+           $checkbox.prop('checked', true);
+       }
+    //    $('.lb-album li > a span').toggleClass('selected')
+    })
+});
+</script>
+<script>
+$(function() {
+    $('#target').click(function () {
+        var checkValues = $('input[name=checkboxlist]:checked').map(function() {
+            return $(this).val();
+        }).get();
+        var element = angular.element($('#communityController'));
+        var scope = element.scope();
+        scope.getSelectedCommunities(checkValues);
+    });
+});
+
+</script>

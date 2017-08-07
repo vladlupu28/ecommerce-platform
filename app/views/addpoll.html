@@ -1,0 +1,57 @@
+<div ng-show="show">
+<h2> Adaugă un nou chestionar </h2>
+<form name="pollForm">
+<div style="display : -webkit-inline-box">
+    <h3> Alege o comunitate </h3>
+    <select class="form-control form-control-lg" style="margin-left : 50px" ng-model="selectedCommunity" ng-options="community.name for community in communities">
+    </select>
+</div>
+<div>
+    <div class="form-group" style="margin-top : 20px">
+    <label for="pollDescription">Adaugă o descriere</label>
+    <textarea name="description" class="form-control" id="pollDescription" rows="3" ng-model="description" required></textarea>
+    <span ng-show="pollForm.description.$invalid">Adăugarea unei descrieri este obligatorie</span>
+  </div>
+</div>
+    <button type="submit" class="btn btn-primary" ng-click="addPoll(selectedCommunity, description)"
+    ng-disabled="pollForm.description.$invalid"> Continua </button>
+</form>
+</div>
+<div ng-hide="show">
+    <h2>Propune 3 produse comunității!</h2>
+    <form name="productForm">
+        <h3> Primul produs</h3>
+        <div class="form-group">
+            <label for="product1Name">Nume:</label>
+            <input type="text" class="form-control" name="product1Name" id="product1Name" ng-model="product1Name" required>
+        </div>
+        <div class="form-group" style="margin-top : 20px">
+            <label for="product1Description">Adaugă o descriere</label>
+            <textarea name="product1Description" class="form-control" id="product1Description" rows="2" ng-model="product1Description" required></textarea>
+        </div>
+        <h3> Al doilea produs </h3>
+        <div class="form-group">
+            <label for="product2Name">Nume:</label>
+            <input type="text" class="form-control" name="product2Name" id="product2Name" ng-model="product2Name" required>
+        </div>
+        <div class="form-group" style="margin-top : 20px">
+            <label for="product2Description">Adaugă o descriere</label>
+            <textarea name="product2Description" class="form-control" id="product2Description" rows="2" ng-model="product2Description" required></textarea>
+        </div>
+        <h3> Al treilea produs </h3>
+        <div class="form-group">
+            <label for="product3Name">Nume:</label>
+            <input type="text" class="form-control" name="product3Name" id="product3Name" ng-model="product3Name" required>
+        </div>
+        <div class="form-group" style="margin-top : 20px">
+            <label for="product3Description">Adaugă o descriere</label>
+            <textarea name="product3Description" class="form-control" id="product3Description" rows="2" ng-model="product3Description" required></textarea>
+        </div>
+
+        <span ng-show="productForm.product1Name.$invalid || productForm.product1Description.$invalid || productForm.product2Name.$invalid || productForm.product2Description.$invalid
+                        || productForm.product3Name.$invalid || productForm.product3Description.$invalid">ATENȚIE! Este obligatorie introducerea celor 3 produse!</span>        
+        <button type="submit" class="btn btn-primary" ng-click="addProducts(product1Name, product1Description, product2Name, product2Description, product3Name, product3Description)"
+        ng-disabled="productForm.product1Name.$invalid || productForm.product1Description.$invalid || productForm.product2Name.$invalid || productForm.product2Description.$invalid
+                        || productForm.product3Name.$invalid || productForm.product3Description.$invalid"> Finalizare </button>
+    </form>
+</div>

@@ -1,0 +1,30 @@
+<button ui-sref="addpoll" class="btn btn1 btn-primary btn-normal" style="float : right">Add Poll</button>
+ <div class="brand_box" ng-repeat="poll in polls">
+    <div style="display: inline">
+    <h2>{{poll.description}}</h2>
+    <h2>AuthorId: {{poll.userId}}</h2>
+    </div>
+   <div class="brand_box">
+	         <div class="left-side col-xs-12 col-sm-3">
+				 <img src="images/m2.jpg" alt=""/>
+			 </div>
+		     <div class="middle-side col-xs-12 col-sm-7">
+                <canvas id="base" class="chart-horizontal-bar" 
+                   chart-data="[poll.products[0].numberOfVotes,poll.products[1].numberOfVotes,poll.products[2].numberOfVotes]" chart-labels="[poll.products[0].name, poll.products[1].name, poll.products[2].name]" chart-options="options">
+                </canvas>
+		    </div>
+			 <div class="right-side col-xs-12 col-sm-4">
+			 	<p ng-if="!poll.check"><a>Votează produsul dorit</a></p>
+				<p ng-if="poll.check"><a>Ai votat deja la acest chestionar!</a></p>
+				 <div style="display: -webkit-inline-box">
+				 <div ng-repeat="prod in poll.products">
+			    <a ng-click="addVote(prod, poll)" class="btn btn1 btn-primary btn-normal btn-inline " ng-disabled="poll.check" target="_self">{{prod.name}}</a> 
+				 </div>   
+				 </div>
+			 </div>
+		<div class="clearfix"> </div>
+	 </div>
+ </div>
+<script>
+
+</script>

@@ -1,0 +1,63 @@
+<style>
+.blogShort{ border-bottom:1px solid #ddd;}
+.add{background: #333; padding: 10%; height: 300px;}
+.btn-blog {
+    color: #ffffff;
+    background-color: #37d980;
+    border-color: #37d980;
+    border-radius:0;
+    margin-bottom:10px
+}
+.btn-blog:hover,
+.btn-blog:focus,
+.btn-blog:active,
+.btn-blog.active,
+.open .dropdown-toggle.btn-blog {
+    color: white;
+    background-color:#34ca78;
+    border-color: #34ca78;
+}
+p#myArticle {
+	display: block;
+	line-height: 1.5em;
+  height: 6em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+</style>
+<button class="btn btn1 btn-primary btn-normal" style="float : right" ng-click="show = !show" ng-show="show">Add Post</button>    
+<div class="col-md-10 blogShort" ng-repeat="topic in topics" ng-show="show">
+                     <h1>{{topic.name}}</h1>
+                     <img src="images/post.jpg" alt="post img" class="pull-left img-responsive thumb margin10 img-thumbnail">
+                     
+                     <article><p id="myArticle">
+                            {{topic.topicSubject}}
+                         </p></article>
+                    <em> AuthorId: {{topic.authorName}}  - Date : {{topic.createdAt}} - Number of comments : {{topic.numberOfComments}}</em> 
+                     <a class="btn btn-blog pull-right marginBottom10" ui-sref="comments" ng-click="setTopic(topic)">CITEȘTE MAI MULT</a> 
+</div>
+<div ng-hide="show">
+<form name="addTopic">
+<div style="display : -webkit-inline-box; margin-top : 10px" >
+    <h3> Alege o comunitate </h3>
+    <select class="form-control form-control-lg" style="margin-left : 50px" ng-model="selectedCommunity" ng-options="community.name for community in communities">
+    </select>
+</div>
+<div>
+    <div class="form-group" style="margin-top : 20px">
+    <label for="topicName">Adaugă un titlu</label>
+    <textarea name="name" class="form-control" id="topicName" rows="1" ng-model="name" required></textarea>
+    <span ng-show="addTopic.name.$invalid">Adăugarea unui titlu este obligatorie</span>
+  </div>
+</div>
+<div>
+    <div class="form-group" style="margin-top : 20px">
+    <label for="topicDescription">Adaugă o descriere</label>
+    <textarea name="description" class="form-control" id="topicDescription" rows="3" ng-model="description" required></textarea>
+    <span ng-show="addTopic.description.$invalid">Adăugarea unei descrieri este obligatorie</span>
+  </div>
+</div>
+    <button type="submit" class="btn btn-primary" ng-click="addTopicFunction(selectedCommunity, name, description)"
+    ng-disabled="addTopic.description.$invalid || addTopic.name.$invalid"> Adaugă </button>
+</form>
+</div>

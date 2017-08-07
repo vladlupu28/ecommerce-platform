@@ -1,0 +1,24 @@
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/styles.css" rel="stylesheet">
+  </head>
+<body>
+<div class="row">
+  <div class="col-md-2">
+		  	<div class="sidebar content-box" style="display: block;">
+                <ul class="nav">
+                    <!-- Main menu -->
+                    <li><a ui-sref="dashboard.indicators"><i class="glyphicon glyphicon-home"></i> Indicatori de performanță</a></li>
+                    <li><a ui-sref="dashboard.timer"><i class="glyphicon glyphicon-calendar"></i> Contor pagini</a></li>
+                    <li><a ui-sref="dashboard.manageproducts"><i class="glyphicon glyphicon-pencil"></i> Gestionare produse</a></li>
+        </ul>
+        </div>
+  </div>
+  <div class="col-md-10">
+    <div ui-view></div>
+  </div>
+</div>
+</body>
+</html>
